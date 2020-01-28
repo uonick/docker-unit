@@ -1,0 +1,17 @@
+---
+- name: Add the user 'gitlab-runner', appending the group 'docker'
+  changed_when: false
+  user:
+    name: gitlab-runner
+    shell: /bin/bash
+    groups: docker
+    append: yes
+
+- name: Create a WWW directory if it does not exist
+  changed_when: false
+  file:
+    path: /var/www
+    state: directory
+    owner: gitlab-runner
+    group: gitlab-runner
+    mode: '0755'

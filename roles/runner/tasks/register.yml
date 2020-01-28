@@ -1,0 +1,10 @@
+---
+- name: Register runner to GitLab
+  changed_when: false
+  command: gitlab-runner register >
+    --non-interactive
+    --url '{{ api_url }}'
+    --registration-token '{{ registration_token }}'
+    --description '{{ description }} (on {{ ansible_nodename }}, {{ansible_os_family}})'
+    --tag-list '{{ tag_list | join(",") }}'
+    --executor 'shell'

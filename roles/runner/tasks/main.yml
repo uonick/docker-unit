@@ -1,0 +1,9 @@
+---
+- name: Install Gitlab Runner
+  include_tasks: install.yml
+
+- name: Register Gitlab Runner
+  include_tasks: register.yml
+
+- name: Configure Gitlab Runner
+  include_tasks: configure.yml

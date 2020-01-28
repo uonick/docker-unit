@@ -1,0 +1,7 @@
+---
+- name: Install common packages
+  apt:
+    name: "{{ packages }}"
+    state: latest
+    update_cache: true
+  changed_when: false

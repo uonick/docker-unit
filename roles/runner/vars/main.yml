@@ -1,0 +1,7 @@
+---
+api_url: https://gitlab.com/
+api_token: SET_API_TOKEN
+registration_token: SET_REGISTRATION_TOKEN
+description: Docker VM Machine
+run_untagged: false
+tag_list: ['docker']

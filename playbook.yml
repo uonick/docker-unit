@@ -1,0 +1,10 @@
+---
+- name: Prepare
+  hosts: web
+  remote_user: root
+  become: true
+  become_method: sudo
+  roles:
+    - common
+    - docker
+    - runner

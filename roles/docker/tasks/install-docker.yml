@@ -1,0 +1,20 @@
+---
+- name: Add Docker GPG apt Key
+  changed_when: false
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add Docker Repository
+  changed_when: false
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu bionic stable
+    state: present
+
+- name: Install Docker CE
+  changed_when: false
+  apt:
+    name: docker-ce
+    state: latest
+    update_cache: true
+  notify: Start Docker
